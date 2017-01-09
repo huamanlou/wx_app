@@ -1,8 +1,18 @@
 <!--index.wxml-->
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"  />
+    </swiper-item>
+  </block>
+</swiper>
+
 <view class="container">
   <view>
     <image class="userinfo-avatar" src="{{logo}}" mode="aspectFit"></image>
   </view>
+
   <view>发现醉南粉优惠券</view>
   <view class="card">
     <image class="card-pic" src="/image/yimian.png"  mode="aspectFit"></image>
@@ -11,5 +21,5 @@
     
   </view>
  
- 
+  <view id="tapTest" data-hi="MINA" bindtap="sendRequest"> Click me! </view>
 </view>

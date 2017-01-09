@@ -4,12 +4,16 @@ var app = getApp();
 Page({
   data: {
     logo:"/image/logo.png",
-    motto: 'fuck 2016',
-    userInfo: {
-      nickName:'真的花满楼',
-
-    }
+    imgUrls: ['/image/slide1.jpg',
+  'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
+      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+    ],
+    indicatorDots: true,
+    autoplay: true,
+    interval: 5000,
+    duration: 1000
   },
+  
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
@@ -25,6 +29,18 @@ Page({
       that.setData({
         userInfo:userInfo
       })
-    })
+    });
+    
+  },
+  sendRequest:function(event){
+    wx.request({
+      url: "http://www.zuinanfen.com",
+      header:{
+        "Content-Type":"text/html"
+      },
+      success: function(res) {
+        console.log(res);
+      }
+    });
   }
-})
+});
