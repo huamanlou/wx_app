@@ -1,0 +1,27 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/card/card",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "醉南粉",
+    "navigationBarTextStyle":"black"
+  },
+   "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "image/jingxuan.png",
+      "selectedIconPath":"image/jingxuan1.png",
+      "text": "优惠券"
+    },
+    {
+      "pagePath": "pages/logs/logs",
+      "iconPath": "image/huiyuan.png",
+      "selectedIconPath":"image/huiyuan1.png",
+      "text": "我的"
+    }]
+  }
+}

@@ -1,0 +1,19 @@
+/**index.wxss**/
+.container{
+  padding:10rpx 0 0 10rpx;
+  margin-bottom:150rpx;
+}
+.userinfo-avatar {
+  width: 200rpx;
+  height: 200rpx;
+  margin: 10rpx;
+  display: flex;
+}
+.card{
+  display: flex;
+  flex-direction: column;
+
+}
+.card-pic{
+  width:650rpx;
+}

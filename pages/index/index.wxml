@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="container">
+  <view>
+    <image class="userinfo-avatar" src="{{logo}}" mode="aspectFit"></image>
+  </view>
+  <view>发现醉南粉优惠券</view>
+  <view class="card">
+    <image class="card-pic" src="/image/yimian.png"  mode="aspectFit"></image>
+    <image class="card-pic" src="/image/yimian.png"  mode="aspectFit"></image>
+    <image class="card-pic" src="/image/yimian.png"  mode="aspectFit"></image>
+    
+  </view>
+ 
+ 
+</view>
