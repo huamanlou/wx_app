@@ -11,7 +11,9 @@ Page({
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
-    duration: 1000
+    duration: 1000,
+    test:'发现醉南粉',
+    products:[{pic:'https://static.oschina.net/uploads/space/2016/0923/095232_tmA0_2915469.jpg?_=5901054'}],
   },
   
   //事件处理函数
@@ -22,25 +24,28 @@ Page({
   },
   onLoad: function () {
     console.log('onLoad')
-    var that = this;
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo(function(userInfo){
-      //更新数据
-      that.setData({
-        userInfo:userInfo
-      })
-    });
+    // var that = this;
+    this.getList(1);
     
   },
-  sendRequest:function(event){
+  getList:function(page){
+    var self = this;
     wx.request({
-      url: "http://www.zuinanfen.com",
+      url: "http://app1.zuinanfen.com/product/getlist",
       header:{
-        "Content-Type":"text/html"
+        "Content-Type":"application/json"
       },
       success: function(res) {
-        console.log(res);
+        console.log(res.data);
+        self.setData({
+          'products':res.data
+        });
       }
     });
+  },
+  listClick:function(event){
+    console.log(event); 
+    var id = event.currentTarget.id;
+    wx.navigateTo({url:'/pages/product/index?id='+id});
   }
 });

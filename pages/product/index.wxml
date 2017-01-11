@@ -1,0 +1,6 @@
+<!--pages/product/index.wxml-->
+<image src="{{pic}}"></image>
+<view>{{title}}</view>
+<view>{{abstract}}</view>
+
+<view>{{desc}}</view>

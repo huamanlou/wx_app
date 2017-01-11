@@ -2,7 +2,8 @@
   "pages":[
     "pages/index/index",
     "pages/card/card",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/product/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
