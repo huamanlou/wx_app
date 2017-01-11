@@ -1,4 +1,4 @@
-// pages/product/index.js
+var app = getApp();
 Page({
   data:{},
   onLoad:function(e){
@@ -19,20 +19,17 @@ Page({
   },
   getInfo:function(id){
     var self = this;
-    wx.request({
-      url: "http://app1.zuinanfen.com/product/show?id="+id,
-      header:{
-        "Content-Type":"application/json"
-      },
+    app.request({
+      url: app.globalData.baseUrl+'/product/show?id='+id,
       success: function(res) {
-        console.log(res.data);
         self.setData({
           'title':res.data.title,
           'abstract':res.data.abstract,
           'pic': res.data.pic,
-          'desc': res.data.desc
+          'desc': res.data.desc,
         });
       }
     });
+    
   },
 })

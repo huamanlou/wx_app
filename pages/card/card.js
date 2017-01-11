@@ -2,22 +2,13 @@
 var app = getApp();
 Page({
   data: {
-    motto: 'fuck 2016',
-    userInfo: {
-      nickName:'真的花满楼',
-
-    }
+    
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
     var that = this;
     //调用应用实例的方法获取全局数据
-    app.getUserInfo(function(userInfo){
-      //更新数据
-      that.setData({
-        userInfo:userInfo
-      })
-    })
+    this.getList();
   },
   onReady:function(){
     // 页面渲染完成
@@ -30,5 +21,17 @@ Page({
   },
   onUnload:function(){
     // 页面关闭
-  }
+  },
+  getList:function(){
+    var self = this;
+    app.request({
+      url: app.globalData.orderUrl+'/api/cardlist',
+      success: function(res) {
+        console.log(res.data);
+        self.setData({
+          'cards':res.data.list
+        });
+      }
+    });
+  },
 })

@@ -30,11 +30,8 @@ Page({
   },
   getList:function(page){
     var self = this;
-    wx.request({
-      url: "http://app1.zuinanfen.com/product/getlist",
-      header:{
-        "Content-Type":"application/json"
-      },
+    app.request({
+      url: app.globalData.baseUrl+'/product/getlist',
       success: function(res) {
         console.log(res.data);
         self.setData({
