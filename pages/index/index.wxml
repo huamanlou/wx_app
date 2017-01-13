@@ -1,6 +1,6 @@
 <!--index.wxml-->
-<swiper indicator-dots="{{indicatorDots}}"
-  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+<swiper indicator-dots="{{swiperConf.indicatorDots}}"
+  autoplay="{{swiperConf.autoplay}}" interval="{{swiperConf.interval}}" duration="{{swiperConf.duration}}">
   <block wx:for="{{imgUrls}}">
     <swiper-item>
       <image src="{{item}}" class="slide-image"  />
@@ -16,7 +16,7 @@
   <view>{{test}}</view>
   <view class="card">
     <block wx:for="{{products}}">
-      <image class="card-pic" src="{{item.pic}}"  mode="aspectFit" bindtap="listClick" id="{{item.id}}"></image>
+      <image class="card-pic" src="{{item.pic[0]}}"  mode="aspectFit" bindtap="listClick" id="{{item.id}}"></image>
       <view>{{item.title}}</view>
       <view>{{item.abstract}}</view>
     </block>

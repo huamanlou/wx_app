@@ -1,5 +1,12 @@
 <!--pages/product/index.wxml-->
-<image src="{{pic}}"></image>
+<swiper indicator-dots="{{swiperConf.indicatorDots}}"
+  autoplay="{{swiperConf.autoplay}}" interval="{{swiperConf.interval}}" duration="{{swiperConf.duration}}">
+  <block wx:for="{{pic}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"  />
+    </swiper-item>
+  </block>
+</swiper>
 <view>{{title}}</view>
 <view>{{abstract}}</view>
 

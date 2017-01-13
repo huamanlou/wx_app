@@ -8,12 +8,8 @@ Page({
   'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
       'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
     ],
-    indicatorDots: true,
-    autoplay: true,
-    interval: 5000,
-    duration: 1000,
-    test:'发现醉南粉',
-    products:[{pic:'https://static.oschina.net/uploads/space/2016/0923/095232_tmA0_2915469.jpg?_=5901054'}],
+    swiperConf:null,
+    products:[],
   },
   
   //事件处理函数
@@ -26,7 +22,9 @@ Page({
     console.log('onLoad')
     // var that = this;
     this.getList(1);
-    
+    this.setData({
+      swiperConf: app.globalData.swiperConf
+    });
   },
   getList:function(page){
     var self = this;

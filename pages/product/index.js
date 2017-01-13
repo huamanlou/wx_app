@@ -1,9 +1,15 @@
 var app = getApp();
 Page({
-  data:{},
+  data:{
+    swiperConf:null
+  },
   onLoad:function(e){
+    this.setData({
+      swiperConf: app.globalData.swiperConf
+    });
     // 页面初始化 options为页面跳转所带来的参数
     this.getInfo(e.id);
+   
   },
   onReady:function(){
     // 页面渲染完成
