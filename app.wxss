@@ -1,1 +1,2 @@
 /**app.wxss**/
+@import '/lib/wxui/app.wxss';
